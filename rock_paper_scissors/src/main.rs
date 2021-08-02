@@ -1,8 +1,7 @@
+use rand::{thread_rng, Rng};
 use std::io;
-use rand::{Rng, thread_rng};
 
 fn main() {
-
     let win = "win";
     let lose = "lose";
     let draw = "draw";
@@ -10,29 +9,35 @@ fn main() {
     let options = ["rock", "paper", "scissors"];
 
     loop {
-
         // player_hand
         let mut player_input = String::new();
 
-        // computer hand is generated random
+        // computer hand is random
         let mut computer_hand = pick_random(&options);
 
         println!("enter your hand plz: Type rock, paper, scissors");
-
-        if player_input == "rock" || player_input == "paper" || player_input == "scissors" {
-            println!("invalid input");
-            break;
-        }
-
         // handle standard input
         // read_line is one of function of str::io
         // return [&mut String]
         // expect is panic func
         io::stdin().read_line(&mut player_input).expect("failed");
 
-        println!("your hand: {}", player_input);
-        println!("computer hand: {}", computer_hand);
+        let player_hand = trim_space(&player_input);
+        // check player_hand is valid or not
+        if player_hand == "rock" || player_hand == "paper" || player_hand == "scissors" {
+            println!("your hand: {}", player_input);
+            println!("computer hand: {}", computer_hand);
+            continue;
+        } else {
+            println!("invalid input");
+            break;
+        }
     }
+}
+
+// remove white space
+fn trim_space (input: &String)-> String {
+    return input.trim().to_string();
 }
 
 fn pick_random(options: &[&str]) -> String {
