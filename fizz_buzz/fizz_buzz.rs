@@ -26,19 +26,33 @@
 //     }
 // }
 
+// fn main() {
+//     for n in 1..=100 {
+//         let can_div_by_five = n % 5 == 0;
+//         let can_div_by_three = n % 3 == 0;
+
+//         if can_div_by_five && can_div_by_three {
+//             println!("fizzbuzz");
+//         } else if can_div_by_five {
+//             println!("buzz");
+//         } else if can_div_by_three {
+//             println!("fizz");
+//         } else {
+//             println!("{}", n)
+//         }
+//     }
+// }
+
 fn main() {
-    for n in 1..100 {
+    for n in 1..=100 {
         let can_div_by_five = n % 5 == 0;
         let can_div_by_three = n % 3 == 0;
 
-        if can_div_by_five && can_div_by_three {
-            println!("fizzbuzz");
-        } else if can_div_by_five {
-            println!("buzz");
-        } else if can_div_by_three {
-            println!("fizz");
-        } else {
-            println!("{}", n)
+        match (can_div_by_five, can_div_by_three) {
+            (true, true) => println!("fizzbuzz"),
+            (true, false) => println!("buzz"),
+            (false, true) => println!("fizz"),
+            (false, false) => println!("{}", n),
         }
     }
 }
