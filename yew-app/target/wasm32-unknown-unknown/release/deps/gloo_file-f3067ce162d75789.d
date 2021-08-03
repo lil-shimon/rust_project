@@ -1,0 +1,10 @@
+/Users/shimozawakenta/project/rust_project/yew-app/target/wasm32-unknown-unknown/release/deps/gloo_file-f3067ce162d75789.rmeta: /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/lib.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/blob.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_list.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_reader.rs
+
+/Users/shimozawakenta/project/rust_project/yew-app/target/wasm32-unknown-unknown/release/deps/libgloo_file-f3067ce162d75789.rlib: /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/lib.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/blob.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_list.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_reader.rs
+
+/Users/shimozawakenta/project/rust_project/yew-app/target/wasm32-unknown-unknown/release/deps/gloo_file-f3067ce162d75789.d: /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/lib.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/blob.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_list.rs /Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_reader.rs
+
+/Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/lib.rs:
+/Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/blob.rs:
+/Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_list.rs:
+/Users/shimozawakenta/.cargo/registry/src/github.com-1ecc6299db9ec823/gloo-file-0.1.0/src/file_reader.rs:
