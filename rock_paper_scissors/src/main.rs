@@ -1,11 +1,11 @@
 use rand::{thread_rng, Rng};
 use std::io;
 
-fn main() {
-    let win = "win";
-    let lose = "lose";
-    let draw = "draw";
+const WIN: &str = "win";
+const LOSE: &str = "lose";
+const DRAW: &str = "draw";
 
+fn main() {
     // enum is better
     let options = ["rock", "paper", "scissors"];
 
@@ -32,22 +32,7 @@ fn main() {
             println!("your hand: {}", player_input);
             println!("computer hand: {}", computer_hand);
             // player vs computer
-            // more smarter func in future....
-            if player_hand == computer_hand {
-                println!("{}", draw);
-            } else if player_hand == "rock" || computer_hand == "paper" {
-                println!("You are: {}", lose);
-            } else if player_hand == "rock" || computer_hand == "scissors" {
-                println!("You are: {}", win);
-            } else if player_hand == "paper" || computer_hand == "scissors" {
-                println!("You are: {}", lose);
-            } else if player_hand == "paper" || computer_hand == "rock" {
-                println!("You are: {}", win);
-            } else if player_hand == "scissors" || computer_hand == "rock" {
-                println!("You are: {}", lose);
-            } else {
-                println!("You are: {}", win);
-            }
+            println!("{}", compareHand(&player_hand, &computer_hand));
         } else {
             println!("invalid input");
             break;
@@ -65,4 +50,22 @@ fn pick_random(options: &[&str]) -> String {
     let mut rng = thread_rng();
     let index = rng.gen_range(0..options.len());
     return String::from(options[index]);
+}
+
+fn compareHand(p: &String, c: &String) -> String {
+    return if p == c {
+        DRAW.to_string()
+    } else if p == "rock" || c == "paper" {
+        LOSE.to_string()
+    } else if p == "rock" || c == "scissors" {
+        WIN.to_string()
+    } else if p == "paper" || c == "scissors" {
+        LOSE.to_string()
+    } else if p == "paper" || c == "rock" {
+        WIN.to_string()
+    } else if p == "scissors" || c == "rock" {
+        LOSE.to_string()
+    } else {
+        WIN.to_string()
+    };
 }
