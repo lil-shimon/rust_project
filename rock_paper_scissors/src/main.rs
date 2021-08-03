@@ -1,9 +1,9 @@
 use rand::{thread_rng, Rng};
 use std::io;
 
-const WIN: &str = "win";
-const LOSE: &str = "lose";
-const DRAW: &str = "draw";
+static WIN: &str = "win";
+static LOSE: &str = "lose";
+static DRAW: &str = "draw";
 
 fn main() {
     // enum is better
@@ -29,9 +29,6 @@ fn main() {
 
         // check player_hand is valid or not
         if player_hand == "rock" || player_hand == "paper" || player_hand == "scissors" {
-            println!("your hand: {}", player_input);
-            println!("computer hand: {}", computer_hand);
-            // player vs computer
             println!("{}", compare_hand(&player_hand, &computer_hand));
         } else {
             println!("invalid input");
@@ -55,6 +52,8 @@ fn pick_random(options: &[&str]) -> String {
 // compare hands
 // return String result
 fn compare_hand(p: &String, c: &String) -> String {
+    println!("your hand: {}", p);
+    println!("computer hand: {}", c);
     return if p == c {
         DRAW.to_string()
     } else if p == "rock" || c == "paper" {
