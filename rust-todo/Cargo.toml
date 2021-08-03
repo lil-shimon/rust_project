@@ -12,3 +12,10 @@ crate-type = ["cdylib", "rlib"]
 yew = "0.17"
 wasm-bindgen = "0.2"
 
+# Strum is a set of macros and traits for working with enums and strings easier in Rust.
+strum = "0.19"
+strum_macros = "0.19"
+
+# serialization framework
+serde = "1"
+serde_derive = "1"
