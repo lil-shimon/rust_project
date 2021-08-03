@@ -22,7 +22,7 @@ impl Component for Model {
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::AddOne => self.value += 1
+            Msg::AddOne => self.value += 100
         }
         true
     }
