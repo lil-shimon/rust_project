@@ -24,7 +24,7 @@ fn main() {
         // expect is panic func
         io::stdin().read_line(&mut player_input).expect("failed");
 
-        // remove white space
+        // remove all white space
         let player_hand = trim_space(&player_input);
 
         // check player_hand is valid or not
@@ -52,6 +52,8 @@ fn pick_random(options: &[&str]) -> String {
     return String::from(options[index]);
 }
 
+// compare hands
+// return String result
 fn compare_hand(p: &String, c: &String) -> String {
     return if p == c {
         DRAW.to_string()
