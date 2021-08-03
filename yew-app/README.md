@@ -4,7 +4,7 @@
 
 ```
 wasm-pack build --target web --out-name wasm --out-dir ./static
-cargo +nightly install miniserve
+cargo +nightly install miniserve (optional: in case you do not have serve tools)
 miniserve ./static --index index.html
 ```
 
