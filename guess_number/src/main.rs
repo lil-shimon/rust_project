@@ -1,4 +1,5 @@
 use std::io;
+use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
@@ -13,8 +14,18 @@ fn main() {
     // get player number
     io::stdin().read_line(&mut input_number).expect("error");
 
+    // input_number convert string to number (u32)
+    // same variable name = shadowing
+    let input_number: u32 = input_number.trim().parse().expect("plz input number");
+
     // check player number is collect or not
+                  match input_number.cmp(&random_number) {
+                    Ordering::Greater => println!("TOO BIG!!!"),
+                    Ordering::Less => println!("too small..."),
+                    Ordering::Equal => println!("collect!!!"),
+                  }
 
     println!("{}", random_number);
     println!("Your guess is: {}", input_number);
 }
+
