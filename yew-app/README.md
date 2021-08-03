@@ -1,5 +1,7 @@
 ## wasm app
 
+### dev
+
 ```
 wasm-pack build --target web --out-name wasm --out-dir ./static
 cargo +nightly install miniserve
