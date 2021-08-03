@@ -1,9 +1,10 @@
 use rand::{thread_rng, Rng};
 use std::io;
 
-static WIN: &str = "win";
-static LOSE: &str = "lose";
-static DRAW: &str = "draw";
+// 'static --> data will not disappear until the end of our program
+static WIN: &'static str = "win";
+static LOSE: &'static str = "lose";
+static DRAW: &'static str = "draw";
 
 fn main() {
     // enum is better
