@@ -34,6 +34,8 @@ fn main() {
             println!("invalid input");
             break;
         }
+        // player_hand is dropped here
+        // computer_hand is dropped here
     }
 }
 
@@ -69,4 +71,5 @@ fn compare_hand(p: &String, c: &String) -> String {
     } else {
         WIN.to_string()
     };
+    // p and c's ownership is drop here
 }
