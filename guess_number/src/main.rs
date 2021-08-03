@@ -16,7 +16,10 @@ fn main() {
 
         // input_number convert string to number (u32)
         // same variable name = shadowing
-        let input_number: u32 = input_number.trim().parse().expect("plz input number");
+        let input_number: u32 = match input_number.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("Your guess is: {}", input_number);
 
