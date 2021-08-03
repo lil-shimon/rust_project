@@ -32,7 +32,7 @@ fn main() {
             println!("your hand: {}", player_input);
             println!("computer hand: {}", computer_hand);
             // player vs computer
-            println!("{}", compareHand(&player_hand, &computer_hand));
+            println!("{}", compare_hand(&player_hand, &computer_hand));
         } else {
             println!("invalid input");
             break;
@@ -52,7 +52,7 @@ fn pick_random(options: &[&str]) -> String {
     return String::from(options[index]);
 }
 
-fn compareHand(p: &String, c: &String) -> String {
+fn compare_hand(p: &String, c: &String) -> String {
     return if p == c {
         DRAW.to_string()
     } else if p == "rock" || c == "paper" {
