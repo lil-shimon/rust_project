@@ -9,6 +9,14 @@ fn main() {
         o,
     }
 
+    // board structure
+    // include board [Vec<Vec>] (2d vec)
+    //         current_player state [String]
+    pub struct Board {
+        board: Vec<Vec<char>>,
+        current_player: Player,
+    }
+
     // score definition
 
     // move func
