@@ -19,6 +19,7 @@ impl Component for Button {
     type Message = Msg;
     type Properties = ();
 
+    // like constructor
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
         Button {
             title: props.title,
