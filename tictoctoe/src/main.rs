@@ -5,6 +5,8 @@ const COM: game::Player = game::Player::O;
 const START_USER: game::Player = game::Player::X;
 
 fn main() {
+    let mut board = game::Board::origin();
     println!("{} {} {}", PLAYER, COM, START_USER);
+    println!("{}", board);
 }
 

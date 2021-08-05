@@ -56,14 +56,14 @@ impl fmt::Display for Square {
 impl fmt::Display for Board {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         for row in &self.board {
-            writeln!(f, "----------")?;
+            writeln!(f, "-------------")?;
             write!(f, "|")?;
             for val in row {
                 write!(f, " {} |", val)?;
             }
             writeln!(f, "")?;
         }
-        writeln!(f, "----------")?;
+        writeln!(f, "-------------")?;
         Ok(())
     }
 }
