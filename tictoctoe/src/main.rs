@@ -1,4 +1,5 @@
 mod game;
+mod utils;
 
 const PLAYER: game::Player = game::Player::X;
 const COM: game::Player = game::Player::O;
@@ -13,5 +14,7 @@ fn main() {
 
     board = game::Board::update_board(&mut board);
     println!("{}", board);
+    utils::what_type(&board);
+
 }
 
