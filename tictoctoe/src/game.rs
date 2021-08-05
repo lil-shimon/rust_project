@@ -31,6 +31,7 @@ pub struct Board {
 }
 
 impl Board {
+    /** constructor */
     pub fn origin() -> Board {
         let default = Square { player: None };
         return Board {
