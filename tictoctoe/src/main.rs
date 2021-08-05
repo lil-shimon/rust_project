@@ -10,4 +10,7 @@ fn main() {
 
     println!("{} {} {}", PLAYER, COM, START_USER);
     println!("{}", board);
+    println!("{}", board.current_player);
+    println!("{}", game::Board::update_board(&mut board));
+    println!("{}", board.current_player);
 }

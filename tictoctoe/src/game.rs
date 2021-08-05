@@ -26,17 +26,32 @@ pub struct Square {
 // include board          [Vec<Vec>] : 2d vec
 //         current_player [String]   : current_player state
 pub struct Board {
-    board: Vec<Vec<Square>>,
-    current_player: Player,
+    pub board: Vec<Vec<Square>>,
+    pub current_player: Player,
 }
 
 impl Board {
+
     /** constructor */
     pub fn origin() -> Board {
         let default = Square { player: None };
         return Board {
             board: vec![vec![default; 3]; 3],
             current_player: Player::X,
+        };
+    }
+
+    /** update board state and switch current_player
+     *  return -> updated Board struct
+     */
+    pub fn update_board(&mut self) -> Board {
+        println!("prev player is: {}", self.current_player);
+        let next = if self.current_player == Player::X { Player::O } else { Player::X };
+        println!("next player is: {}", next);
+        let moved = &self.board;
+        return Board {
+            board: moved.to_vec(),
+            current_player: next,
         };
     }
 }
