@@ -41,12 +41,18 @@ impl Board {
         };
     }
 
+    /** switch player */
+    pub fn next_player (&self) -> Player {
+        let next = if self.current_player == Player::X { Player::O } else { Player::X };
+        return next;
+    }
+
     /** update board state and switch current_player
      *  return -> updated Board struct
      */
     pub fn update_board(&mut self) -> Board {
         println!("prev player is: {}", self.current_player);
-        let next = if self.current_player == Player::X { Player::O } else { Player::X };
+        let next = self.next_player();
         println!("next player is: {}", next);
         let moved = &self.board;
         return Board {
