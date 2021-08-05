@@ -44,6 +44,7 @@ fn main() {
         }
     }
 
+    /** each board */
     impl fmt::Display for Square {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             match self.player {
@@ -55,6 +56,7 @@ fn main() {
         }
     }
 
+    /** Board */
     impl fmt::Display for Board {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
             for row in &self.board {
