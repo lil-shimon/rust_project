@@ -31,7 +31,6 @@ pub struct Board {
 }
 
 impl Board {
-
     /** constructor */
     pub fn origin() -> Board {
         let default = Square { player: None };
@@ -42,9 +41,32 @@ impl Board {
     }
 
     /** switch player */
-    pub fn next_player (&self) -> Player {
-        let next = if self.current_player == Player::X { Player::O } else { Player::X };
+    pub fn next_player(&self) -> Player {
+        let next = if self.current_player == Player::X {
+            Player::O
+        } else {
+            Player::X
+        };
         return next;
+    }
+
+    pub fn move_board(&mut self, x: usize, y: usize) -> Board {
+        let mut board = &self.board;
+        for row in board {
+            for col in row {
+                println!("col: {}", col);
+                // if col == x && row == y {
+                //     col.push(self.current_player);
+                // } else {
+                //     col.push(self.board[col][row]);
+                // }
+            }
+        }
+        // board.push(col);
+        return Board {
+            board: self.board.to_vec(),
+            current_player: self.current_player,
+        };
     }
 
     /** update board state and switch current_player
@@ -54,11 +76,22 @@ impl Board {
         println!("prev player is: {}", self.current_player);
         let next = self.next_player();
         println!("next player is: {}", next);
-        let moved = &self.board;
+        let new = Self::move_board(self, 1, 2);
+        println!("{}", new);
         return Board {
-            board: moved.to_vec(),
+            board: self.board.to_vec(),
             current_player: next,
         };
+    }
+}
+
+impl PartialEq for Square {
+    fn eq(&self, other: &Self) -> bool {
+        match (self.player.as_ref(), other.player.as_ref()) {
+            (None, None) => true,
+            (Some(x), Some(y)) => x == y,
+            _ => false
+        }
     }
 }
 
