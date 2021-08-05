@@ -57,6 +57,18 @@ impl Board {
          */
         let (x, y) = m.loc;
         println!("x: {}, y: {}", x, y);
+
+        // TODO: new board indicates only one Square in vec 
+        // to update board state, 
+        // the new_board value insert into board state
+        let mut new_board = &mut self.board[x][y];
+
+        // current_player 
+        let owner = &mut Square { player: Some(self.current_player) };
+
+        new_board = owner;
+        println!("new_board: {}", new_board);
+        println!("owner: {}", owner);
         Ok(())
     }
 
@@ -66,7 +78,7 @@ impl Board {
     pub fn update_board(&mut self) -> Board {
         println!("prev player is: {}", self.current_player);
         let next = self.next_player();
-        Self::play_move(self, &Move { loc: {(1, 3)}, player: self.current_player });
+        Self::play_move(self, &Move { loc: {(1, 2)}, player: self.current_player });
         println!("next player is: {}", next);
         return Board {
             board: self.board.to_vec(),
