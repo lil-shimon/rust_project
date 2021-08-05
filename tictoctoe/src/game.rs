@@ -50,23 +50,10 @@ impl Board {
         return next;
     }
 
-    pub fn move_board(&mut self, x: usize, y: usize) -> Board {
-        let mut board = &self.board;
-        for row in board {
-            for col in row {
-                println!("col: {}", col);
-                // if col == x && row == y {
-                //     col.push(self.current_player);
-                // } else {
-                //     col.push(self.board[col][row]);
-                // }
-            }
-        }
-        // board.push(col);
-        return Board {
-            board: self.board.to_vec(),
-            current_player: self.current_player,
-        };
+    pub fn play_move(&mut self, m: &Move) -> Result<(), ()> {
+        let (x, y) = m.loc;
+        println!("x: {}, y: {}", x, y);
+        Ok(())
     }
 
     /** update board state and switch current_player
@@ -75,9 +62,8 @@ impl Board {
     pub fn update_board(&mut self) -> Board {
         println!("prev player is: {}", self.current_player);
         let next = self.next_player();
+        Self::play_move(self, &Move { loc: {(1, 3)}, player: self.current_player });
         println!("next player is: {}", next);
-        let new = Self::move_board(self, 1, 2);
-        println!("{}", new);
         return Board {
             board: self.board.to_vec(),
             current_player: next,
@@ -90,7 +76,7 @@ impl PartialEq for Square {
         match (self.player.as_ref(), other.player.as_ref()) {
             (None, None) => true,
             (Some(x), Some(y)) => x == y,
-            _ => false
+            _ => false,
         }
     }
 }
