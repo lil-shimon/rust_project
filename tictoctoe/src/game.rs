@@ -51,6 +51,10 @@ impl Board {
     }
 
     pub fn play_move(&mut self, m: &Move) -> Result<(), ()> {
+        /* 
+         * m.loc (Move.loc) is tuple
+         * expand that to get x and y
+         */
         let (x, y) = m.loc;
         println!("x: {}, y: {}", x, y);
         Ok(())
