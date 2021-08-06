@@ -1,3 +1,5 @@
+mod guess;
+
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -61,6 +63,12 @@ mod tests {
     fn greeting_contains_name () {
         let result = greeting("shimon");
         assert!(result.contains("shimon"), "Greeting did not contain name, Value was {}", result);
+    }
+
+    #[test]
+    #[should_panic(expected="Guess value must be smaller than one")]
+    fn guess_greater_than_100 () {
+        guess::Guess::new(-1);
     }
 }
 
