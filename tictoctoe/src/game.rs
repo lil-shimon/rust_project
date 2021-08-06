@@ -61,14 +61,14 @@ impl Board {
         // TODO: new board indicates only one Square in vec 
         // to update board state, 
         // the new_board value insert into board state
-        let mut new_board = &mut self.board[x][y];
+        // let mut new_board = &mut self.board[x][y];
 
         // current_player 
-        let owner = &mut Square { player: Some(self.current_player) };
+        // let owner = &mut Square { player: Some(self.current_player) };
 
-        new_board = owner;
-        println!("new_board: {}", new_board);
-        println!("owner: {}", owner);
+        // new_board = owner;
+        // println!("new_board: {}", new_board);
+        // println!("owner: {}", owner);
         Ok(())
     }
 
