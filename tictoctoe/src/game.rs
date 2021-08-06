@@ -1,3 +1,4 @@
+use super::*;
 use std::fmt;
 use std::vec::Vec;
 
@@ -51,19 +52,19 @@ impl Board {
     }
 
     pub fn play_move(&mut self, m: &Move) -> Result<(), ()> {
-        /* 
+        /*
          * m.loc (Move.loc) is tuple
          * expand that to get x and y
          */
         let (x, y) = m.loc;
         println!("x: {}, y: {}", x, y);
 
-        // TODO: new board indicates only one Square in vec 
-        // to update board state, 
+        // TODO: new board indicates only one Square in vec
+        // to update board state,
         // the new_board value insert into board state
         // let mut new_board = &mut self.board[x][y];
 
-        // current_player 
+        // current_player
         // let owner = &mut Square { player: Some(self.current_player) };
 
         // new_board = owner;
@@ -78,7 +79,13 @@ impl Board {
     pub fn update_board(&mut self) -> Board {
         println!("prev player is: {}", self.current_player);
         let next = self.next_player();
-        Self::play_move(self, &Move { loc: {(1, 2)}, player: self.current_player });
+        Self::play_move(
+            self,
+            &Move {
+                loc: { (1, 2) },
+                player: self.current_player,
+            },
+        );
         println!("next player is: {}", next);
         return Board {
             board: self.board.to_vec(),
@@ -140,3 +147,18 @@ impl fmt::Display for Player {
 // move func
 
 // check func  (is win, lose)
+//
+//
+
+#[cfg(test)]
+mod test {
+
+    use super::*;
+
+    #[test]
+    fn check_next_player() {
+        let new_board = Board::origin();
+        assert_eq!(format!("The expected is :{:?}", Board::next_player(&new_board)), "The expected is :O");
+    }
+}
+
