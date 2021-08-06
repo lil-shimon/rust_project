@@ -1,4 +1,5 @@
 mod guess;
+mod add;
 
 #[derive(Debug)]
 struct Rectangle {
@@ -69,6 +70,16 @@ mod tests {
     #[should_panic(expected="Guess value must be smaller than one")]
     fn guess_greater_than_100 () {
         guess::Guess::new(-1);
+    }
+
+    #[test]
+    fn check_add_fn_with_result() -> Result<(), String> {
+        let number = 3;
+        if add::add_four(number) == number+4 {
+            Ok(())
+        } else {
+            Err(String::from("test is failed"))
+        }
     }
 }
 
