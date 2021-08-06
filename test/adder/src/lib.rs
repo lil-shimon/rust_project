@@ -14,6 +14,10 @@ pub fn add_number(a: i32) -> i32 {
     return a + 2;
 }
 
+pub fn greeting (name: &str) -> String {
+    format!("Hello {}!", name)
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -51,6 +55,12 @@ mod tests {
         assert_eq!(4, add_number(2));
         // assert_ne => when expected != actual, true
         assert_ne!(100, add_number(2));
+    }
+
+    #[test]
+    fn greeting_contains_name () {
+        let result = greeting("shimon");
+        assert!(result.contains("shimon"), "Greeting did not contain name, Value was {}", result);
     }
 }
 
