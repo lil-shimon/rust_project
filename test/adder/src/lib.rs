@@ -10,6 +10,10 @@ impl Rectangle {
     }
 }
 
+pub fn add_number(a: i32) -> i32 {
+    return a + 2;
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -22,7 +26,7 @@ mod tests {
 
     #[test]
     fn another() {
-        panic!("Make this test failed");
+        // panic!("Make this test failed");
     }
 
     #[test]
@@ -39,4 +43,14 @@ mod tests {
 
         assert!(larger.can_hold(&smaller));
     }
+
+    #[test]
+    fn it_add_two () {
+        // (expected, actual)
+        // assert_eq => when expected == actual, true
+        assert_eq!(4, add_number(2));
+        // assert_ne => when expected != actual, true
+        assert_ne!(100, add_number(2));
+    }
 }
+
