@@ -58,8 +58,6 @@ impl Board {
          */
         let (x, y) = m.loc;
         let next_player = Square { player: Some(self.next_player()) };
-        println!("x: {}, y: {}", x, y);
-        println!("next_player is :{}", next_player);
         // to update board state,
         // the new_board value insert into board state
         // let mut new_board = &mut self.board[x][y];
