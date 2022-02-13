@@ -1,5 +1,7 @@
 mod ownership;
+mod generics;
 
 fn main() {
-    ownership::run();
+    // ownership::run();
+    generics::run();
 }
