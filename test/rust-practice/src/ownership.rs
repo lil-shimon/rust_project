@@ -13,5 +13,7 @@ pub fn run() {
 
     let s3 = String::from("string deep copy"); // String型。所有権を持っている
     let s4 = s3.clone(); // s3をdeep copyしている
-    println!("{}, {}", s3, s4)
+    println!("{}, {}", s3, s4);
+    println!("s3のスタックアドレスは {:p}", &s3);
+    println!("s4のスタックアドレスは {:p}", &s4);
 }
