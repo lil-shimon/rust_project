@@ -9,6 +9,9 @@ pub fn run() {
 
     let sl1 = "literal";
     let sl2 = sl1;
-    println!("{}, {}", sl1, sl2)
+    println!("{}, {}", sl1, sl2);
 
+    let s3 = String::from("string deep copy"); // String型。所有権を持っている
+    let s4 = s3.clone(); // s3をdeep copyしている
+    println!("{}, {}", s3, s4)
 }
