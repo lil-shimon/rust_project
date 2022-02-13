@@ -6,4 +6,9 @@ pub fn run() {
     let i1 = 1;// i1が所有権を持っている
     let i2 = i1; // i2にコピー (heapにデータを保存しないタイプはコピーできる)
     println!("{}, {}", i1, i2); // i1とi2が表示される
+
+    let sl1 = "literal";
+    let sl2 = sl1;
+    println!("{}, {}", sl1, sl2)
+
 }
