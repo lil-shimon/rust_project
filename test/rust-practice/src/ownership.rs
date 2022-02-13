@@ -1,3 +1,5 @@
+use std::mem::take;
+
 pub fn run() {
     let s1 = String::from("hello"); // s1が所有権を持っている
     let s2 = s1; // s1からs2に所有権を渡している
@@ -16,4 +18,21 @@ pub fn run() {
     println!("{}, {}", s3, s4);
     println!("s3のスタックアドレスは {:p}", &s3);
     println!("s4のスタックアドレスは {:p}", &s4);
+    println!("Heap memory of address of s3 {:p}", s3.as_ptr());
+    println!("Heap memory of address of s4 {:p}", s4.as_ptr());
+
+    let s5 = String::from("hello");
+    print_var_info(&s5);
+    take_ownership(s5);
+}
+
+fn take_ownership(s: String) {
+    print_var_info(&s);
+}
+
+fn print_var_info(s: &String) {
+    println!("stack address is {:p}", &s); // stack address
+    println!("heap address is {:?}", s.as_ptr()); // heap address
+    println!("length is {}", s.len()); // length
+    println!("capacity is {}", s.capacity()); // capacity
 }
