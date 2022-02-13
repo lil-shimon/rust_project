@@ -1,1 +1,0 @@
-/Users/shimozawakenta/project/rust_project/test/rust-practice/target/debug/rust-practice: /Users/shimozawakenta/project/rust_project/test/rust-practice/src/main.rs /Users/shimozawakenta/project/rust_project/test/rust-practice/src/ownership.rs
