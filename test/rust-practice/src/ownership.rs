@@ -26,6 +26,9 @@ pub fn run() {
     print_var_info(&s6);
     let s7 = take_giveback_ownership(s6); // pass ownership to s7
     print_var_info(&s7);
+    let mut hello = String::from("hello");
+    change(&mut hello);
+    print_var_info(&hello);
 }
 
 fn take_ownership(s: String) {
@@ -41,4 +44,12 @@ fn print_var_info(s: &String) {
     println!("heap address is {:?}", s.as_ptr()); // heap address
     println!("length is {}", s.len()); // length
     println!("capacity is {}", s.capacity()); // capacity
+}
+
+fn calc_len(s: &String) -> usize {
+    s.len()
+}
+
+fn change(s: &mut String) {
+    s.push_str("_world")
 }
