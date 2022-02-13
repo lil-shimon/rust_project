@@ -1,5 +1,3 @@
-use std::mem::take;
-
 pub fn run() {
     let s1 = String::from("hello"); // s1が所有権を持っている
     let s2 = s1; // s1からs2に所有権を渡している
@@ -24,10 +22,18 @@ pub fn run() {
     let s5 = String::from("hello");
     print_var_info(&s5);
     take_ownership(s5);
+    let s6 = String::from("hello"); // ownership
+    print_var_info(&s6);
+    let s7 = take_giveback_ownership(s6); // pass ownership to s7
+    print_var_info(&s7);
 }
 
 fn take_ownership(s: String) {
     print_var_info(&s);
+}
+
+fn take_giveback_ownership(s: String) -> String {
+    s
 }
 
 fn print_var_info(s: &String) {
